@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * The type Jdbc connection.
+ */
 public class JdbcConnection {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcConnection.class);
@@ -15,6 +18,11 @@ public class JdbcConnection {
     private static String jdbcUsername = "sa";
     private static String jdbcPassword = "";
 
+    /**
+     * Gets connection.
+     *
+     * @return the connection
+     */
     public static Connection getConnection() {
         Connection connection = null;
         try {
