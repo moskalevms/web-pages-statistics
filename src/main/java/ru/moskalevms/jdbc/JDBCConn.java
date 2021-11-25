@@ -10,9 +10,9 @@ import java.sql.SQLException;
 /**
  * The type Jdbc connection.
  */
-public class JdbcConnection {
+public class JDBCConn {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JdbcConnection.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JDBCConn.class);
 
     private static String jdbcURL = "jdbc:h2:~/statistics";
     private static String jdbcUsername = "sa";

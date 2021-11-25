@@ -34,4 +34,13 @@ public class UniqueWords {
     public void setCount(String count) {
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return "UniqueWords{" +
+                "id=" + id +
+                ", word='" + word + '\'' +
+                ", count='" + count + '\'' +
+                '}';
+    }
 }

@@ -16,4 +16,20 @@ public interface UniqueWordsDao {
      */
     void save(List<UniqueWords> uniqueWords);
 
+    List<UniqueWords> findAll();
+
+    UniqueWords findByWord(String word);
+
+    List<UniqueWords> getStatistics();
+
+    UniqueWords findByCount(int count);
+
+    void update(List<UniqueWords> uniqueWords);
+
+    void deleteById(long id);
+
+    void deleteAll();
+
+
+
 }

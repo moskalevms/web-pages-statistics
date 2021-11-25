@@ -20,22 +20,29 @@ public class WordsServiceImpl implements WordsService{
     private final HtmlReaderService readerService = new HtmlReaderByUrlServiceImpl();
 
     private final UniqueWordCounterService wordCounterService = new UniqueWordCounterServiceImpl(readerService);
+
     @Override
     public void save() {
         Map<String, Integer> statistics = wordCounterService.getUniqueWordsStatistics();
 
-        UniqueWords word = new UniqueWords();
-
         List<UniqueWords> uniqueWords = new ArrayList<>();
 
         for(Map.Entry<String, Integer> entry : statistics.entrySet()){
+              UniqueWords word = new UniqueWords();
               word.setWord(entry.getKey());
               word.setCount(String.valueOf(entry.getValue()));
               uniqueWords.add(word);
         }
-
         uniqueWordsDao.save(uniqueWords);
+    }
 
+    public List<UniqueWords> findAll(){
+        return uniqueWordsDao.findAll();
+    }
+
+    @Override
+    public List<UniqueWords> getStatistics() {
+        return uniqueWordsDao.getStatistics();
     }
 
 }

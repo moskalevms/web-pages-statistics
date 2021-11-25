@@ -8,4 +8,8 @@ public interface WordsService {
 
     void save();
 
+    List<UniqueWords> findAll();
+
+    List<UniqueWords> getStatistics();
+
 }
